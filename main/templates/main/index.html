@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block head %}
+    <title>Home ● FoodMania</title>
+{% endblock %}
+{% block content %}
+    <div class="deal">
+        <div class="day">
+            <h1>Deal of the day</h1>
+        </div>
+        <img src="{% static 'images/img.jpg'%}" alt="Food Background">
+    </div>
+    {% for food in foods%}
+    <div class="food">
+        <div class="food-i"                         >
+            <div>
+                
+                <img class="foodp"src="{{food.image.url}}" width="240" >
+                <div>
+                    <h4  class="name">{{food.name}}</h4>
+                    <h4 class="f-add">{{food.address}}</h4>
+                </div>
+                
+            </div>
+        
+
+        </div>
+    </div>
+    
+    {% endfor %}
+ 
+{% endblock %}
